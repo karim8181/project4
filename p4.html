@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body>
+<center>
+<h1 id="id">
+    0
+</h1>
+</center>
+<center>
+<img onclick="start()" src="play.png" height="50" width="50">
+<img onclick="stop()" src="pause.png" height="50" width="50">
+<img onclick="pause()" src="kv.png" height="50" width="50">
+</center>
+</body>
+<script>
+    i=0
+    timer = undefined
+    function start() {
+        clearInterval(timer)
+        timer = setInterval(function () {
+            i+=1
+            document.getElementById('id').innerHTML = i
+        }, 1000)
+    }
+    function stop() {
+clearInterval(timer)
+    }
+    function pause() {
+        clearInterval(timer)
+        i=0
+        document.getElementById('id').innerHTML = i
+    }
+</script>
+</html>
